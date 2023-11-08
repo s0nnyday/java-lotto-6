@@ -1,8 +1,5 @@
 package lotto;
 
-import lotto.Lotto;
-import lotto.LottoTicket;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +12,7 @@ public class LottoShop {
         List<Lotto> tickets = new ArrayList<>();
 
         for (int i = 0; i < numOfTickets; i++) {
-            Lotto lotto = Lotto.createRandomNumber();
+            Lotto lotto = Lotto.createRandomLotto();
             tickets.add(lotto);
         }
 

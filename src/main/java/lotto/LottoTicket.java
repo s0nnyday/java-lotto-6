@@ -1,6 +1,5 @@
 package lotto;
 
-import lotto.Lotto;
 
 import java.util.List;
 
