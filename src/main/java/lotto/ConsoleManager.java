@@ -32,8 +32,10 @@ public class ConsoleManager {
         while (true) {
             try {
                 System.out.println(PURCHASE_AMOUNT_MESSAGE);
-                int purchaseAmount = parseInputToAmount(Console.readLine());
-                InputValidator.validateThousandUnit(purchaseAmount);
+                String input = Console.readLine();
+                int purchaseAmount = parseInputToAmount(input);
+                InputValidator validator = new InputValidator();
+                validator.validateThousandUnit(purchaseAmount);
                 return purchaseAmount;
             } catch (NumberFormatException e) {
                 InputValidator.validateInvalidNumber();

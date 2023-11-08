@@ -47,7 +47,7 @@ public class InputValidator {
     }
 
     public static void validateThousandUnit(int amount) {
-        if (amount % 1 != 0) {
+        if (amount % THOUSAND_UNIT != 0) {
             throw new IllegalArgumentException(ERROR_NOT_THOUSAND_UNIT);
         }
     }

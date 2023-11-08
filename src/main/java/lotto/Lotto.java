@@ -41,7 +41,7 @@ public class Lotto {
     }
 
     public static Lotto createRandomNumber(){
-        List<Integer> pickedNumbers = new ArrayList<>();
+        List<Integer> pickedNumbers;
         pickedNumbers = Randoms.pickUniqueNumbersInRange(MIN_NUMBER,MAX_NUMBER,LOTTO_SIZE);
         Collections.sort(pickedNumbers);
         return new Lotto(pickedNumbers);
