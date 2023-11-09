@@ -17,8 +17,7 @@ public class ConsoleManager {
                 System.out.println(LOTTO_NUMBER_MESSAGE);
                 String input = Console.readLine();
                 List<Integer> numbers = parseInputToList(input);
-                InputValidator validator = new InputValidator();
-                validator.validateLottoNumbers(numbers);
+                InputValidator.validateLottoNumbers(numbers);
                 return numbers;
             } catch (NumberFormatException e) {
                 InputValidator.validateInvalidNumber();
@@ -32,7 +31,8 @@ public class ConsoleManager {
         while (true) {
             try {
                 System.out.println(PURCHASE_AMOUNT_MESSAGE);
-                int purchaseAmount = parseInputToAmount(Console.readLine());
+                String input = Console.readLine();
+                int purchaseAmount = parseInputToAmount(input);
                 InputValidator.validateThousandUnit(purchaseAmount);
                 return purchaseAmount;
             } catch (NumberFormatException e) {
@@ -45,23 +45,6 @@ public class ConsoleManager {
 
     private int parseInputToAmount(String input) {
         return Integer.parseInt(input);
-    }
-
-    public List<Integer> getManualInputNumbers() {
-        while (true) {
-            try {
-                System.out.println(LOTTO_NUMBER_MESSAGE);
-                String input = Console.readLine();
-                List<Integer> numbers = parseInputToList(input);
-                InputValidator validator = new InputValidator();
-                validator.validateLottoNumbers(numbers);
-                return numbers;
-            } catch (NumberFormatException e) {
-                InputValidator.validateInvalidNumber();
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
-        }
     }
 
     public int getBonusNumber() {

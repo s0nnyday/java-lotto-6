@@ -27,21 +27,8 @@ public class Lotto {
         this.numbers = new ArrayList<>(numbers);
     }
 
-    public static Lotto createRandomLotto() {
-        List<Integer> pickedNumbers = new ArrayList<>();
-        for (int i = 0; i < LOTTO_SIZE; i++) {
-            int number = (int) (Math.random() * MAX_NUMBER) + 1;
-            while (pickedNumbers.contains(number)) {
-                number = (int) (Math.random() * MAX_NUMBER) + 1;
-            }
-            pickedNumbers.add(number);
-        }
-        Collections.sort(pickedNumbers);
-        return new Lotto(pickedNumbers);
-    }
-
-    public static Lotto createRandomNumber(){
-        List<Integer> pickedNumbers = new ArrayList<>();
+    public static Lotto createRandomLotto(){
+        List<Integer> pickedNumbers;
         pickedNumbers = Randoms.pickUniqueNumbersInRange(MIN_NUMBER,MAX_NUMBER,LOTTO_SIZE);
         Collections.sort(pickedNumbers);
         return new Lotto(pickedNumbers);

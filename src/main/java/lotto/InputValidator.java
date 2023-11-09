@@ -13,12 +13,6 @@ public class InputValidator {
     public static final String ERROR_NOT_THOUSAND_UNIT = "[ERROR] 1000원 단위로 입력해주세요.";
     public static final String ERROR_INVALID_BONUS_NUMBER = "[ERROR] 보너스 번호를 확인해주세요.";
 
-    public static void validateWinningNumbers(List<Integer> numbers) {
-        validateSize(numbers);
-        validateRange(numbers);
-        validateDuplicates(numbers);
-    }
-
     public static void validateLottoNumbers(List<Integer> numbers) {
         validateSize(numbers);
         validateRange(numbers);
@@ -47,7 +41,7 @@ public class InputValidator {
     }
 
     public static void validateThousandUnit(int amount) {
-        if (amount % 1 != 0) {
+        if (amount % THOUSAND_UNIT != 0) {
             throw new IllegalArgumentException(ERROR_NOT_THOUSAND_UNIT);
         }
     }
